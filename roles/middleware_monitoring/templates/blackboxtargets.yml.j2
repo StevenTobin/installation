@@ -1,0 +1,45 @@
+apiVersion: applicationmonitoring.integreatly.org/v1alpha1
+kind: BlackboxTarget
+metadata:
+  name: example-blackboxtarget
+spec:
+  blackboxTargets:
+blackboxTargets:
+  # Solution Explorer targets
+  - service: webapp-ui
+    url: {{ webapp_secure_route }} #####
+    module: http_2xx
+  # Developer Launcher targets
+  - service: launcher-ui
+    url: {{ launcher_route }}/launch/ ######
+    module: http_2xx
+  - service: launcher-keycloak-ui
+    namespace: launcher
+    url: {{ launcher_sso_route }}/auth/admin/master/console/
+    module: http_2xx
+  # AMQ Online targets
+  - service: amq-keycloak-ui
+    url: {{ enmasse_keycloak_route }}/auth/admin/master/console/
+    module: http_2xx
+  - service: amq-service-broker
+    url: {{ enmasse_console_route }}/healthz
+    module: http_2xx
+  # Codeready Workspaces targets
+  - service: codeready-ui
+    url: {{ che_route_cmd }}/dashboard/
+    module: http_2xx
+  # RH-SSO targets
+  - service: rhsso-ui
+    url: {{ rhsso_secure_route_name }}/auth/admin/master/console/
+    module: http_2xx
+  # 3scale targets
+  - service: 3scale-admin-ui
+    url: {{ threescale_master_route }}/p/login/
+    module: http_2xx
+  - service: 3scale-system-admin-ui
+    namespace: 3scale
+    url: {{ threescale_admin_route }}
+    module: http_2xx
+  - service: 3scale-developer-console-ui
+    url: {{ threescale_developer_route }}
+    module: http_2xx

@@ -1,0 +1,18 @@
+---
+- name: Get blackbox routes
+  block:
+    - name: get enmasse keycloak route
+      shell: "oc get routes -n {{ enmasse_namespace }} | grep keycloak | awk '{print $2}'"
+      register: enmasse_keycloak_route
+    - name: get enmasse console route
+      shell: "oc get routes -n {{ enmasse_namespace }} | grep console-proxy | awk '{print $2}'"
+      register: enmasse_console_route
+    - name: get 3scale admin route
+      shell: "oc get routes -n {{ threescale_namespace }} | grep system-provider-admin | aws '{print $2}'"
+      register: threescale_admin_route
+    - name: get 3scale master route
+      shell: "oc get routes -n {{ threescale_namespace }} | grep system-master | aws '{print $2}'"
+      register: threescale_master_route
+    - name: get 3scale master route
+      shell: "oc get routes -n {{ threescale_namespace }} | grep system-developer | aws '{print $2}'"
+      register: threescale_developer_route

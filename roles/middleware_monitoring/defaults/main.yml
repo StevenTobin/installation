@@ -39,3 +39,4 @@ monitoring_resource_templates_pre:
 monitoring_resource_templates_post:
   # Application monitoring resources
   - "application_monitoring_cr.yml"
+  - "blackboxtargets_cr.yml"
