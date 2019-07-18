@@ -8,11 +8,11 @@
       shell: "oc get routes -n {{ enmasse_namespace }} | grep console-proxy | awk '{print $2}'"
       register: enmasse_console_route
     - name: get 3scale admin route
-      shell: "oc get routes -n {{ threescale_namespace }} | grep system-provider-admin | aws '{print $2}'"
+      shell: "oc get routes -n {{ threescale_namespace }} | grep system-provider-admin | awk '{print $2}'"
       register: threescale_admin_route
     - name: get 3scale master route
-      shell: "oc get routes -n {{ threescale_namespace }} | grep system-master | aws '{print $2}'"
+      shell: "oc get routes -n {{ threescale_namespace }} | grep system-master | awk '{print $2}'"
       register: threescale_master_route
     - name: get 3scale master route
-      shell: "oc get routes -n {{ threescale_namespace }} | grep system-developer | aws '{print $2}'"
+      shell: "oc get routes -n {{ threescale_namespace }} | grep system-developer | awk '{print $2}'"
       register: threescale_developer_route
