@@ -9,6 +9,8 @@
     monitor: true
     is_service: true
 
+- include: ./get_blackbox_routes.yml
+
 - include: ./create_resource_from_template.yml
   with_items: "{{ monitoring_resource_templates_pre }}"
 

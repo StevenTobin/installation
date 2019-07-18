@@ -1,6 +1,4 @@
 ---
-- include: ./get_blackbox_routes.yml
-
 - name: "Create resource file from template ({{ item }})"
   template:
     src: "{{ item }}.j2"

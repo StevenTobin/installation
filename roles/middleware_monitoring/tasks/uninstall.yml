@@ -2,6 +2,7 @@
 - include: ./delete_resource_from_template.yml
   with_items: "{{ monitoring_resource_templates_pre }}"
 
+- include: ./get_blackbox_routes.yml
 - include: ./delete_resource_from_template.yml
   with_items: "{{ monitoring_resource_templates_post }}"
 
