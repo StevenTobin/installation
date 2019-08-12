@@ -140,9 +140,9 @@
     - include_role:
         name: fuse
         tasks_from: upgrade
-     vars:
-      old_fuse_tag: "application-templates-2.1.fuse-740025-redhat-00002"
-      fuse_image_tag: "{{ upgrade_fuse_image_tag }}"
+      vars:
+        old_fuse_tag: "application-templates-2.1.fuse-740025-redhat-00002"
+        fuse_image_tag: "{{ upgrade_fuse_image_tag }}"
 
     - include_role:
         name: fuse_managed

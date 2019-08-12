@@ -67,7 +67,6 @@
     - "spring-boot-camel-infinispan-template.json"
     - "spring-boot-camel-rest-3scale-template.json"
     - "spring-boot-camel-rest-sql-template.json"
-    - "spring-boot-camel-teiid-template.json"
     - "spring-boot-camel-template.json"
     - "spring-boot-camel-xa-template.json"
     - "spring-boot-camel-xml-template.json"
@@ -98,4 +97,3 @@
 
 - name: Update the fuse operator resources url for msbroker
   shell: "oc set env deployment/msb FUSE_OPERATOR_RESOURCES_URL={{ fuse_online_operator_resources }} -n {{ msbroker_namespace }}"
-    
